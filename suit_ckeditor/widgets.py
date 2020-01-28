@@ -20,7 +20,7 @@ class CKEditorWidget(Textarea):
         self.editor_options = editor_options or {}
 
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         output = super(CKEditorWidget, self).render(name, value, attrs)
         output += mark_safe(
             '<script type="text/javascript">CKEDITOR.replace("%s", %s);</script>'
